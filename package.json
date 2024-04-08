@@ -1,8 +1,22 @@
 {
   "name": "vite-storybook-antd",
-  "private": true,
-  "version": "0.0.1",
+  "private": false,
+  "version": "0.0.24",
   "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "module": "./dist/index.es.js",
+      "import": "./dist/index.es.js",
+      "default": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -12,12 +26,18 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@ant-design/cssinjs": "^1.19.1",
+    "@ant-design/static-style-extract": "^1.0.2",
+    "@emotion/css": "^11.11.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "antd": "^5.16.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.3.1",
+    "@emotion/babel-plugin": "^11.11.0",
     "@storybook/addon-essentials": "^8.0.6",
     "@storybook/addon-interactions": "^8.0.6",
     "@storybook/addon-links": "^8.0.6",
@@ -37,6 +57,11 @@
     "eslint-plugin-storybook": "^0.8.0",
     "storybook": "^8.0.6",
     "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.8.1",
+    "vite-plugin-imp": "^2.4.0"
+  },
+  "peerDependencies": {
+    "antd": "^5.16.1"
   }
 }
