@@ -2,8 +2,8 @@ import type { ThemeConfig } from 'antd';
 
 const theme: ThemeConfig = {
   token: {
-    fontSize: 16,
-    colorPrimary: '#ff0000',
+    fontSize: 24,
+    colorPrimary: '#00ff00',
   },
 };
 

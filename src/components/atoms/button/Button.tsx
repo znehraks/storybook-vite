@@ -1,5 +1,6 @@
 import { Button as AntdButton, ButtonProps } from 'antd';
-import { withAntdConfig } from '../../useAntdConfig';
+import { withAntdConfig } from '../../withAntdConfigProvider';
+import { withThemeProvider } from '../../withThemeProvider';
 
 interface IButtonProps extends ButtonProps {}
 function Square(props: IButtonProps) {
@@ -7,7 +8,7 @@ function Square(props: IButtonProps) {
 }
 
 const Button = {
-  Square: withAntdConfig(Square),
+  Square: withThemeProvider(withAntdConfig(Square)),
 };
 
 export default Button;
